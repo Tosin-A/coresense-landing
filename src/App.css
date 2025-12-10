@@ -453,6 +453,10 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .feature-box:hover {
@@ -482,6 +486,9 @@
   font-size: 16px;
   line-height: 1.6;
   color: #b0b0b0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Survey Modal */
@@ -863,16 +870,29 @@
     gap: 20px;
   }
 
+  /* Remove transform on mobile for centered items */
+  .features-grid .feature-box:nth-child(7),
+  .features-grid .feature-box:nth-child(8) {
+    transform: none;
+    grid-column: 1 / -1;
+  }
+
   .feature-box {
     padding: 24px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .feature-box h3 {
     font-size: 20px;
+    word-wrap: break-word;
   }
 
   .feature-box p {
     font-size: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .waitlist {
@@ -962,5 +982,26 @@
 
   .feature-box {
     padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .feature-box h3 {
+    font-size: 18px;
+    word-wrap: break-word;
+  }
+
+  .feature-box p {
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Ensure no transform on very small screens */
+  .features-grid .feature-box:nth-child(7),
+  .features-grid .feature-box:nth-child(8) {
+    transform: none;
+    grid-column: 1 / -1;
   }
 }
