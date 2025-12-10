@@ -5,7 +5,6 @@ export default function App() {
   const [showSurvey, setShowSurvey] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "" });
   const [selectedFeature, setSelectedFeature] = useState("");
-  const [feedback, setFeedback] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [visibleElements, setVisibleElements] = useState(new Set());
   
@@ -126,16 +125,10 @@ export default function App() {
     sourceInput.name = "source";
     sourceInput.value = "landing_waitlist_survey";
     
-    const feedbackInput = document.createElement("input");
-    feedbackInput.type = "hidden";
-    feedbackInput.name = "feedback";
-    feedbackInput.value = feedback;
-    
     form.appendChild(nameInput);
     form.appendChild(emailInput);
     form.appendChild(featureInput);
     form.appendChild(sourceInput);
-    form.appendChild(feedbackInput);
     document.body.appendChild(form);
     form.submit();
     
@@ -184,20 +177,6 @@ export default function App() {
                     </div>
                   </label>
                 ))}
-              </div>
-              <div className="survey-feedback">
-                <label htmlFor="feedback" className="feedback-label">
-                  Optional: Share feedback, feature requests, or how often you'd use the app
-                </label>
-                <textarea
-                  id="feedback"
-                  name="feedback"
-                  placeholder="E.g., I'd love to see [feature], or I'd use this daily/weekly..."
-                  value={feedback}
-                  onChange={(e) => setFeedback(e.target.value)}
-                  className="feedback-textarea"
-                  rows="4"
-                />
               </div>
               <button type="submit" className="submit-survey-button">
                 Reserve My Spot
