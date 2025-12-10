@@ -1,16 +1,93 @@
-# React + Vite
+# CoreSense Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, professional landing page for CoreSense - an AI-powered personal health and productivity companion.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern UI Design**: Beautiful, responsive design with gradient accents and smooth animations
+- **Survey Integration**: Interactive feature selection survey that appears when users click "Get Early Access"
+- **Form Submission**: Integrated with Formspree for email collection and survey responses
+- **Professional Layout**: Clean, organized sections including hero, features, and waitlist
+- **Mobile Responsive**: Fully responsive design that works on all devices
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- CSS3 (with modern features like gradients, backdrop-filter, etc.)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd coresense-landing
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## Form Configuration
+
+The landing page uses Formspree for form submissions. To configure:
+
+1. Sign up at [Formspree](https://formspree.io)
+2. Create a new form and get your form ID
+3. Update the form action URL in `src/App.jsx` (line with `formspree.io/f/manrpqwb`)
+
+## User Flow
+
+1. User visits landing page
+2. User fills out name and email in the waitlist form
+3. User clicks "Get Early Access"
+4. Survey modal appears asking which feature interests them most
+5. User selects a feature and clicks "Reserve My Spot"
+6. Form submits to Formspree with email, name, and selected feature
+7. Success page displays confirmation message
+8. Follow-up email sent (configured in Formspree) asking for 5-minute interview
+
+## Project Structure
+
+```
+coresense-landing/
+├── src/
+│   ├── App.jsx          # Main application component
+│   ├── App.css          # Application styles
+│   ├── main.jsx         # Entry point
+│   └── index.css        # Global styles
+├── public/              # Static assets
+├── index.html           # HTML template
+└── package.json         # Dependencies
+```
+
+## License
+
+Private project - All rights reserved
+
+## Built By
+
+Tosin
