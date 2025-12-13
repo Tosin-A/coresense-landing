@@ -367,7 +367,7 @@ export default function App() {
                     </button>
                   </div>
                   <p className="form-note-inline">
-                    Free to join • No credit card required • Register Interest
+                    Free to join • Real Data • Register Interest
                   </p>
         </form>
               </div>
